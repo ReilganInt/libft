@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   end.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 21:06:21 by vmormont          #+#    #+#             */
-/*   Updated: 2019/05/01 20:22:17 by vmormont         ###   ########.fr       */
+/*   Created: 2019/06/01 17:37:57 by vmormont          #+#    #+#             */
+/*   Updated: 2019/06/01 17:38:37 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <sys/types.h>
-# include <sys/uio.h>
-# include "libft.h"
-# define BUFF_SIZE 1
+#include "libft.h"
 
-typedef struct		s_fd
+int		end(char *str)
 {
-	int				fd;
-	int				state;
-	size_t			numlines;
-	t_list			*res;
-	struct s_fd		*next;
-}					t_fd;
-
-int					get_next_line(const int fd, char **line);
-
-#endif
+	ft_putendl(str);
+	return (1);
+}
