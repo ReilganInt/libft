@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end.c                                              :+:      :+:    :+:   */
+/*   ft_buf_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 17:37:57 by vmormont          #+#    #+#             */
-/*   Updated: 2019/06/01 17:38:37 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:12:50 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:13:06 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		end(char *str)
+t_buf				*ft_buf_new(t_buf *new)
 {
-	ft_putendl(str);
-	return (1);
+	new->size = 0;
+	new->top = -1;
+	new->err = 0;
+	if (!(new->buf = ft_strnew(BUF_SIZE)))
+		return (NULL);
+	return (new);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 19:09:26 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/06 22:03:53 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:19:07 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:19:07 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c)
-		if (!*s++)
-			return (0);
-	return ((char *)s);
+	while (*s != (char)c && *s)
+		s++;
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
 }

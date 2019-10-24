@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_die.c                                           :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/01 20:37:11 by vmormont          #+#    #+#             */
-/*   Updated: 2019/05/01 20:37:32 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:17:41 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:17:42 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_die(char *reason)
+long double	ft_neg_pow(long double n, int pow)
 {
-	ft_putstr(reason);
-	exit(EXIT_FAILURE);
-	return (EXIT_FAILURE);
+	long double res;
+
+	res = 1;
+	pow *= -1;
+	while (pow)
+		if (pow & 1)
+		{
+			res = (long double)res / (long double)n;
+			--pow;
+		}
+		else
+		{
+			n = (long double)n * (long double)n;
+			pow >>= 1;
+		}
+	return (res);
 }

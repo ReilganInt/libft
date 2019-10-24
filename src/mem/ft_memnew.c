@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 01:53:17 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/10 07:57:56 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:16:24 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:16:25 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char	*ft_memnew(size_t i, int lett)
 {
-	if (!s || !fd)
-		return ;
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	return (ft_memset(ft_strnew(i), lett, i));
 }

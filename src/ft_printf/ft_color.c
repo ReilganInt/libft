@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_color.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 01:52:42 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/10 07:36:36 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:13:37 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:13:38 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+char	*ft_detect_col(char *str, t_buf *buf)
 {
-	write(fd, &c, 1);
+	char	*tmp;
+	char	*color;
+
+	tmp = str;
+	while (tmp && *tmp != '}')
+	{
+		if (*tmp < '0' || *tmp > '9')
+			return (str - 1);
+		tmp++;
+	}
+	if (*tmp != '}')
+		return (str - 1);
+	color = ft_strndup(str, tmp - str);
+	ft_buf_add_s(buf, "\033[38;5;", 1);
+	ft_buf_add_s(buf, color, 0);
+	ft_buf_add_c(buf, 'm');
+	return (tmp);
 }

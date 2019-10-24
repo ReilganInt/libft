@@ -5,21 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/01 20:32:56 by vmormont          #+#    #+#             */
-/*   Updated: 2019/05/01 20:32:58 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:20:31 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:20:38 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char			*ft_strnew(size_t size)
 {
-	char	*new;
-
-	size = size + 1;
-	if (size == 0)
-		return (NULL);
-	if (!(new = (char *)ft_memalloc(size)))
-		return (NULL);
-	return (new);
+	return ((char *)ft_memalloc(size + 1));
 }

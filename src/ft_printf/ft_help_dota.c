@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_help_dota.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 01:53:39 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/10 07:33:21 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:14:33 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:14:35 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*un(char *main, char *s)
 {
-	if (!s || !fd)
-		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char	*tmp_c;
+
+	tmp_c = main;
+	if (*s == '-')
+		main = ft_strjoin(s, main);
+	else
+		main = ft_strjoin(main, s);
+	free(tmp_c);
+	return (main);
+}
+
+int		max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }

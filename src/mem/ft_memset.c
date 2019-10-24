@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 19:28:34 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/12 19:51:56 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:16:44 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:16:45 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*d;
+	unsigned char	*res;
 
-	if (len)
+	res = (unsigned char *)b;
+	while (len--)
 	{
-		d = (unsigned char *)b;
-		while (len--)
-			*d++ = (unsigned char)c;
+		*res = c;
+		res++;
 	}
 	return (b);
 }

@@ -13,7 +13,7 @@
 NAME = libft.a 
 
 SRC_DIR	= ./src
-INC_DIR = ./includes
+INC_DIR = ./include
 OBJ_DIR = ./obj
 
 RAW_SRC	:= $(shell find $(SRC_DIR) -type f | grep -E "\.c$$")

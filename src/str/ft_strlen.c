@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 16:37:01 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/07 00:04:37 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:19:55 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:19:58 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	char *tmp;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return ((size_t)i);
+	if (s)
+	{
+		tmp = (char*)s;
+		if (s)
+			while (*tmp)
+				tmp++;
+		return (tmp - s);
+	}
+	return (0);
 }

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_num_dig.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 15:36:17 by vmormont          #+#    #+#             */
-/*   Updated: 2019/04/10 07:29:39 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:16:50 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:16:51 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int		ft_num_dig(uintmax_t n, int base)
 {
-	if (!s)
-		return ;
-	while (*s)
+	int res;
+
+	res = 0;
+	if (n == 0)
+		return (1);
+	while (n)
 	{
-		ft_putchar(*s);
-		s++;
+		res++;
+		n /= base;
 	}
+	return (res);
 }
